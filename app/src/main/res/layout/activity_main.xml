@@ -6,13 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!--
+     layout_widthはコンテンツに合わせる
+     layout_heightはコンテンツに合わせる
+     textはstring.xmlのapp_name属性の値を設定
+     layout_constraint~で下、左、右を制約(親のレイアウト) → 上だけボタンに制約
+     -->
     <TextView
+        android:id="@+id/textResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="@string/app_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCurrent" />
+
+    <!--
+     layout_widthはレイアウトに合わせる
+     layout_heightはコンテンツに合わせる
+     textはstring.xmlのbtnCurrent属性の値を設定
+     layout_constraint~で上、左、右を制約(親のレイアウト)
+     -->
+    <Button
+        android:id="@+id/btnCurrent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="btnCurrentClick"
+        android:text="@string/btnCurrent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
